@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/TestMYDB</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+
+
+  <servlet>
+    <servlet-name>FetchItemsController</servlet-name>
+    <servlet-class>cart.FetchItemsServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+<servlet>
+    <servlet-name>AddItemsController</servlet-name>
+    <servlet-class>cart.AddItemsServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+<servlet>
+    <servlet-name>DecisionController</servlet-name>
+    <servlet-class>cart.DecisionServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>FetchItemsController</servlet-name>
+    <url-pattern>/fetchItems</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddItemsController</servlet-name>
+    <url-pattern>/addItems</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>DecisionController</servlet-name>
+    <url-pattern>/decision</url-pattern>
+  </servlet-mapping>
+  <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+  <!-- The Usual Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>Index.html</welcome-file>
+  </welcome-file-list>
+
+
+</web-app>

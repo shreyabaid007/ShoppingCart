@@ -1,0 +1,13 @@
+package cart;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+
+public class AddItemsServlet extends HttpServlet
+{
+	protected void doGet(HttpServletRequest request, HttpServletReponse response) throws ServletException, IOException
+	{
+
+	}
+};
